@@ -53,14 +53,14 @@ export default function Booking() {
                     Name and Contacts
                 </div>
                 <div className = 'bg-slate-100 rounded-lg space-x-5 w-fit px-10 py-5 flex flex-row justfy-center'>
-                    <TextField variant = "standard" name = "Name-Lastname" label = "Name-Lastname"/>
-                    <TextField variant = "standard" name = "Contact-Number" label = "Contact-Number"/>
+                    <TextField variant = "standard" name = "Name-Lastname" label = "Name-Lastname" onChange={(e)=>{setNameLastname(e.target.value)}}/>
+                    <TextField variant = "standard" name = "Contact-Number" label = "Contact-Number"onChange={(e)=>{setTel(e.target.value)}}/>
                 </div>
                 <div className = "text-md text-left text-gray-600">
                     Venue
                 </div>
                 <div>
-                <Select variant = 'standard' name = 'venue' id ='venue' className = 'h-[2em] w-[250px] bg-slate-100 rounded-lg px-10  flex flex-row justfy-center'>
+                <Select variant = 'standard' name = 'venue' id ='venue' className = 'h-[2em] w-[250px] bg-slate-100 rounded-lg px-10  flex flex-row justfy-center' value={venue} onChange={(e)=>{setVenue(e.target.value)}}>
                     <MenuItem value = "Bloom">The Bloom Pavilion</MenuItem>
                     <MenuItem value = "Spark">Spark Space</MenuItem>
                     <MenuItem value = "GrandTable"> The Grand Table</MenuItem>
@@ -69,7 +69,7 @@ export default function Booking() {
                 <div className = "text-md text-left text-gray-600">
                     Booking Date
                 </div>
-                <DateReserve/>
+                <DateReserve onDateChange={(value:Dayjs)=>setDate(value)}/>
             </div>
             <button onClick={makeBooking} className = "block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white" name = "Book Venue">Book Venue</button>
         </FormControl>
