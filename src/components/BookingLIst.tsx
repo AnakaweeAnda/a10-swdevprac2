@@ -5,13 +5,14 @@ import {useDispatch} from 'react-redux';
 
 export default function BookingList() {
     const bookingItems = useAppSelector((state)=>state.bookSlice.bookItems);
+
     const dispatch = useDispatch<AppDispatch>();
 
     return (
         <> <div className='text-xl flex justify-center items-center'>Booking List</div>
         {
             bookingItems.length === 0? (
-                <div className ='text-xl flex justify-center items-center'>“No Venue Booking</div>
+                <div className ='text-xl flex justify-center items-center'>No Venue Booking</div>
                 
             ) : (
                 bookingItems.map((bookItem) => {
