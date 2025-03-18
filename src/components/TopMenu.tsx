@@ -30,6 +30,7 @@ export default async function TopMenu() {
                     </div>
                 </Link>
             }
+            <div className='flex items-center absolute left-24 h-full px-2 absolute left-0 text-cyan-600 text-sm margin-right-0'><TopMenuItem title='My Booking' pageRef='/mybooking' /></div>
         </div>
     );
     
