@@ -15,7 +15,7 @@ export default function BookingList() {
                 <div className ='text-xl flex justify-center items-center'>No Venue Booking</div>
                 
             ) : (
-                bookingItems.map((bookItem) => {
+                bookingItems.map((bookItem) => (
                     <div className = 'bg-slate-200 rounded px-5 mx-5 py-2 my-2' key ={bookItem.nameLastname}>
                         <div className = 'text-xl text-black'>Name-Lastname : {bookItem.nameLastname}</div>
                         <div className = 'text-xl text-black'>Tel. : {bookItem.tel}</div>
@@ -24,7 +24,7 @@ export default function BookingList() {
                         <button className ='block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm'
                         onClick = {()=> dispatch(removeBooking(bookItem))}>Remove Booking</button>  
                     </div>
-                })
+                ))
             )
         } 
         </>
